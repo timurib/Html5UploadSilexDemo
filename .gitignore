@@ -1,0 +1,6 @@
+vendor/
+web/upload/
+!web/upload/.gitkeep
+access.log
+error.log
+composer.phar

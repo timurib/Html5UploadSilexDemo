@@ -1,0 +1,1 @@
+../src/Timurib/Html5Upload/Resources/public/html5upload.js

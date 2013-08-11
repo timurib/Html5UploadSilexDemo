@@ -1,0 +1,11 @@
+{
+    "name": "HTML5Upload Demo",
+    "require": {
+        "silex/silex": "1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    }
+}
