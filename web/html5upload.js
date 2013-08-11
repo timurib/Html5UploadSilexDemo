@@ -1,3 +1,8 @@
+/*
+ * Module for chunked AJAX upload
+ *
+ * @author Timur Ibragimov <timok@ya.ru>
+ */
 (function(thisModule) {
     // Try to load as ARM module (for RequireJS)…
     console.log('Init module html5upload');
