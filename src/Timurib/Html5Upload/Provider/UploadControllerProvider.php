@@ -7,13 +7,20 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Timurib\Html5Upload\Handler\UploadHandler;
+use Timurib\Html5Upload\Exception\ChunkExceededException;
+use Timurib\Html5Upload\Exception\InvalidUploadException;
+use Timurib\Html5Upload\Exception\NotEnoughSpaceException;
 
 /**
+ * Upload controllers proviers
+ *
  * @author Timur Ibragimov <timok@ya.ru>
  */
 class UploadControllerProvider implements ControllerProviderInterface
 {
     /**
+     * Connect controllers to application
+     *
      * @param \Silex\Application $app
      * @return \Silex\Application
      */
@@ -28,6 +35,8 @@ class UploadControllerProvider implements ControllerProviderInterface
     }
 
     /**
+     * Generate page with form
+     *
      * @return string
      */
     public function formAction()
@@ -38,6 +47,8 @@ class UploadControllerProvider implements ControllerProviderInterface
     }
 
     /**
+     * Receive ajax-requests, pass data to UploadHandler and return JSON response to client
+     *
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      * @throws BadRequestHttpException

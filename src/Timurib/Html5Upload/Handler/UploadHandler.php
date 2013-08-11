@@ -2,6 +2,9 @@
 namespace Timurib\Html5Upload\Handler;
 
 use Timurib\Html5Upload\Exception\IOException;
+use Timurib\Html5Upload\Exception\ChunkExceededException;
+use Timurib\Html5Upload\Exception\InvalidUploadException;
+use Timurib\Html5Upload\Exception\NotEnoughSpaceException;
 
 /**
  * @author Ibragimov Timur <timok@ya.ru>
@@ -103,6 +106,8 @@ class UploadHandler
     }
 
     /**
+     * Start upload process
+     *
      * @param string $originalFilename имя загружаемого файла
      * @param int $fileSize размер в байтах
      * @return string уникальный идентификатор процесса загрузки
@@ -141,6 +146,8 @@ class UploadHandler
     }
 
     /**
+     * Receive and save file chunk
+     *
      * @param string $uploadId
      * @param string $originalFilename
      *
@@ -196,6 +203,8 @@ class UploadHandler
     }
 
     /**
+     * Finish upload process, move file from temporary to permanent and return URL
+     *
      * @param string $uploadId
      * @param string $originalFilename
      * @return string
